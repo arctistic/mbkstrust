@@ -1,0 +1,54 @@
+@import '../../../styles.scss';
+@import '../../../assets/style.scss';
+
+.container{
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 4.5fr 9fr;
+  width: 45em;
+  margin: auto;
+  height: 20em;
+  .spacer{
+    background-color: $font-dark-bg-color;
+    height: 80%;
+    border-bottom-left-radius: 50%;
+    img{
+      width: 100%;
+      height: 125%;
+      object-fit: cover;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+  }
+  .content{
+    background-color: $font-dark-bg-color;
+    height: 80%;
+    padding: 2em 3em 2em 3em;
+    .name{
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 1.5em;
+    }
+    .position{
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 1.1em;
+      color: $font-secondary;
+    }
+    .caption{
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: $font-primary;
+    }
+  }
+}
+.photo-right{
+  grid-template-columns: 9fr 4.5fr;
+  .spacer{
+    order: 2;
+  }
+  .content{
+    order: 1;
+  }
+}
+

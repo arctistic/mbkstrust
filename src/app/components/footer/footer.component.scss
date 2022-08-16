@@ -1,0 +1,63 @@
+@import '../../../styles.scss';
+@import '../../../assets/style.scss';
+
+.container{
+  background-color: $primary-color;
+  height: 5em;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  .navigations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .link{
+      transition: all 0.2s ease-in-out;
+      position: relative;
+      color: $font-dark-bg-color;
+      font-family: 'Jost', sans-serif;
+      font-size: 1em;
+      margin: 0em 2em;
+      cursor: pointer;
+      .icon-angle-up-solid{
+        font-size: 0.8em;
+      }
+      .dropup-menu{
+        display: none;
+        position: absolute;
+        bottom: 0em;
+        width: 25em;
+        ul{
+          background-color: $primary-color;
+          margin-top: 1em;
+          padding: 2em;
+          list-style: none;
+          box-shadow: 0px 10px 19px -7px #000000;
+          li{
+            margin: 0.5em;
+          }
+          li:hover{
+            border-left: 3px solid $font-dark-bg-color;
+            transition: all 0.2s ease-in-out;
+            padding-left: 5px;
+          }
+        }
+      }
+      .arrow-div{
+          margin-left: 1em;
+          width: 0;
+          height: 0;
+          border: 0.5em solid transparent;
+          border-bottom: 0;
+          border-top: 0.5em solid $primary-color;
+          padding-bottom: 3.5em;
+      }
+    }
+    .link:hover{
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+    #projects-link:hover .dropup-menu{
+      display: block;
+    }
+  }
+}

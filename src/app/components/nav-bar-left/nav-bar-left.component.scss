@@ -1,0 +1,52 @@
+@import '../../../styles.scss';
+
+@mixin flex-all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  .verticle-spacer{
+    margin: 0px;
+    height: 6em;
+  }
+  #logo-title-container{
+    @include flex-vertical-center();
+    #logo-container{
+      height: 6em;
+      @include flex-all-center();
+      img{
+        height: 90%;
+      }
+    }
+    #title-container{
+      margin: 0em 1em;
+      #initials{
+        font-family: 'Jost', sans-serif;
+        font-weight: 500;
+        color: $font-dark-bg-color;
+        font-size: 2.8em;
+        line-height: 1em;
+        letter-spacing: 5px;
+      }
+      #title{
+        color: $font-dark-bg-secondary-color;
+        font-family: 'Jost', sans-serif;
+        font-size: 1.2em;
+      }
+    }
+  }
+}

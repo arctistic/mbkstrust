@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+.container{
+  background-color: $secondary-color;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  iframe{
+    width: 90%;
+    height: 25em;
+    margin-top: -5em;
+  }
+}

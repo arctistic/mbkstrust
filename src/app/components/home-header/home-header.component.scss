@@ -1,0 +1,82 @@
+@import '../../../assets/style.scss';
+@import '../../../styles.scss';
+
+#main-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  .verticle-spacer-left{
+    background-color: $secondary-color;
+  }
+  .content-container{
+    position: relative;
+    background-color: $secondary-color;
+    .title{
+      font-family: "Jost", sans-serif;
+      font-size: 2.5em;
+      font-weight: 500;
+      letter-spacing: -2px;
+      padding-top: 1.5em;
+      padding-right: 1em;
+      line-height: 45px;
+      padding-bottom: 0.8em;
+    }
+    .caption{
+      font-family: 'Jost', sans-serif;
+      padding-right: 4em;
+    }
+    .footer{
+      position: absolute;
+      bottom: 2em;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: 2em;
+      .donate-btn{
+        color: $font-dark-bg-color;
+        font-family: "Jost", sans-serif;
+        width: 6.25em;
+        height: 2.5em;
+        background-color: $primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .donate-btn:hover{
+
+        transform: scale(1.1);
+      }
+      .socials-container{
+        display: flex;transition: all 0.2s ease-in-out;
+        justify-content: center;
+        align-items: center;
+        a{
+          text-decoration: none;
+        }
+        span{
+          font-size: 1em;
+          color: $font-secondary;
+          margin: 0px 1em;
+          cursor: pointer;
+        }
+        span:hover{
+          transition: all 0.2s ease-in-out;
+          color: $font-primary;
+        }
+      }
+    }
+  }
+  .photo-container{
+    height: 25em;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .verticle-spacer-right{
+    background-color: $primary-color;
+  }
+
+}

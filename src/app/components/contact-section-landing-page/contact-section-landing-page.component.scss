@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  background-color: $secondary-color;
+  .mbks-logo{
+    width: 100%;
+    padding: 4em 6em;
+    display: flex;
+    justify-content: flex-end;
+    img{
+      height: 25em;
+    }
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    padding: 4em 6em;
+    justify-content: flex-end;
+    .info-group{
+      margin-bottom: 2em;
+      font-family: 'Jost', sans-serif;
+      .title{
+        font-size: 1.5em;
+        font-weight: 500;
+      }
+      .caption{
+        color: $font-secondary;
+        font-weight: 400;
+        font-size: 1.1em;
+      }
+    }
+  }
+}

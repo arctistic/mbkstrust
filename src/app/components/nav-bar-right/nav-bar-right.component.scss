@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import '../../../styles.scss';
+
+/*SVG to font*/
+@import '../../../assets/style.scss';
+
+#container{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  #links-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .link-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .title{
+        color: white;
+        text-decoration: none;
+        font-family: 'Jost', sans-serif;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        .icon-angle-down-solid{
+          font-size: 0.8em;
+        }
+        #arrow-div-container{
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 0em;
+          padding-top: 4em;
+          .arrow-div{
+            margin-left: 1em;
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent;
+            border-top: 0;
+            border-bottom: 0.5em solid $primary-color;
+          }
+          .dropdown-container{
+            box-shadow: 0px 10px 19px -7px #000000;
+            background-color: $primary-color;
+            padding: 2em 2em 1.5em 2em;
+            width: 20em;
+            list-style: none;
+            a{
+              text-decoration: none;
+            }
+            a li{
+              margin-bottom: 1em;
+              color: $font-dark-bg-color;
+            }
+            a li:hover{
+              border-left: 3px solid $font-dark-bg-color;
+              transition: all 0.2s ease-in-out;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+      #project-title:hover #arrow-div-container{
+        display: flex;
+        .scale-on-hover{
+          transition: all 0.2s ease-in-out;
+          transform: scale(1.1);
+        }
+      }
+      #project-title:hover .scale-on-hover{
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+      .scale-on-hover:hover{
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .verticle-spacer{
+    margin: 0px;
+    height: 6em;
+  }
+}

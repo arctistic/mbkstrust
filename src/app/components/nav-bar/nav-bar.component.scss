@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid red;
+  background-color: $primary-color;
+  height: 6em;
+  align-items: center;
+  border: none;
+}
