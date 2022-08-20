@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { HomePageService } from 'src/app/services/home-page.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-right',
@@ -9,16 +9,30 @@ import { Router } from '@angular/router';
 })
 export class NavBarRightComponent implements OnInit {
 
+  navigationSubscription:any;
+
   @Input() projects:any
 
-  constructor(private router:Router) { }
+  @Output() projectIdEmitter: EventEmitter<any> = new EventEmitter();
+
+  constructor(private router:Router, private routes:ActivatedRoute) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationEnd) {
+        this.initialiseInvites();
+      }
+    });
+  }
+  initialiseInvites() {
+    this.projectIdEmitter.emit(this.routes.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit(): void {
 
   }
 
-  navitageToProject(project_id:string){
-    this.router.navigate(['project', project_id]).then(page => { window.location.reload(); });
+  navitageToProject(project_id:any){
+
   }
 
 }

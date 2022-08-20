@@ -23,6 +23,7 @@ export class HomeHeaderComponent implements OnInit {
   @Input() caption:any;
   @Input() photo:any;
   @Input() donateBg:any;
+  @Input() bankDetails:any
 
   public showDonate:boolean = false;
 

@@ -6,7 +6,7 @@
       <span class="icon-angle-up-solid"></span>
       <div class="dropup-menu">
         <ul>
-          <li *ngFor="let project of projects" (click)="navitageToProject(project.project_id)">
+          <li *ngFor="let project of projects" routerLink="/project/{{project.project_id}}">
             <span *ngIf="project.project_short_form != ''">
               {{project.project_short_form}} -
             </span>

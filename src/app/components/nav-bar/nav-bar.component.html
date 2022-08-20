@@ -1,5 +1,5 @@
 <nav>
   <app-nav-bar-left [mbks_logo]="mbks_logo"></app-nav-bar-left>
-  <app-nav-bar-right [projects]="projects"></app-nav-bar-right>
+  <app-nav-bar-right (projectIdEmitter)="projectIdEmitter($event)" [projects]="projects"></app-nav-bar-right>
 </nav>
 <app-mobile-nav [projects]="projects"></app-mobile-nav>

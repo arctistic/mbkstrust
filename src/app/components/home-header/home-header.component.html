@@ -32,10 +32,9 @@
     Help us help change lives
   </div>
   <div class="caption">
-    Mukh Bandh Kaam Suru Trust <br>
-    State Bank of India <br>
-    A/c No. 37715203916 <br>
-    IFSC Code: SBIN0000063 <br>
+    <span *ngFor="let line of bankDetails">
+      {{line}} <br>
+    </span>
   </div>
   <span class="close-btn" (click)="closeDonate()">x</span>
 </div>

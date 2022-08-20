@@ -1,7 +1,7 @@
-<app-nav-bar></app-nav-bar>
-<app-loader *ngIf="project === null"></app-loader>
+<app-nav-bar (idEmitter)="idEmitter($event)"></app-nav-bar>
+<app-loader *ngIf="showLoadingPage"></app-loader>
 
-<div *ngIf="project" id="main-container">
+<div *ngIf="!showLoadingPage" id="main-container">
   <div class="main-title">
     {{project.project_name}}
     <span *ngIf="project.project_short_form != ''">
@@ -20,4 +20,4 @@
   </div>
 
 </div>
-<app-footer></app-footer>
+<app-footer (projectIdFromFooter)="idEmitter($event)" ></app-footer>

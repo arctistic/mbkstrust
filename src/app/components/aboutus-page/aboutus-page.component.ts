@@ -19,7 +19,6 @@ export class AboutusPageComponent implements OnInit {
       data => {
         this.trustees = data[0].trustees;
         this.members = data[0].members;
-        console.log(data[0]);
       }
     )
   }

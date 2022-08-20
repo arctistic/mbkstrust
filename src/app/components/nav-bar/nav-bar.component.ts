@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HomePageService } from 'src/app/services/home-page.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { HomePageService } from 'src/app/services/home-page.service';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+
+  @Output() idEmitter: EventEmitter<any> = new EventEmitter();
 
   public projects:any;
   public mbks_logo: any;
@@ -22,4 +24,7 @@ export class NavBarComponent implements OnInit {
     })
   }
 
+  projectIdEmitter(data:any){
+    this.idEmitter.emit(data);
+  }
 }

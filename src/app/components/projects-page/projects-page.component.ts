@@ -10,6 +10,7 @@ import { ProjectsPageService } from 'src/app/services/projects-page.service';
 export class ProjectsPageComponent implements OnInit {
 
   public project:any = null;
+  showLoadingPage:boolean = true;
 
   constructor(
     private projectPageService:ProjectsPageService,
@@ -23,6 +24,7 @@ export class ProjectsPageComponent implements OnInit {
         projects => {
           let currentProjectId = curThis.routes.snapshot.paramMap.get('id');
           curThis.project = curThis.searchForProject(currentProjectId, projects);
+          curThis.showLoadingPage = false;
         }
       )
     }, 1000)
@@ -36,4 +38,8 @@ export class ProjectsPageComponent implements OnInit {
     }
   }
 
+  idEmitter(data:any){
+    this.showLoadingPage = true;
+    this.ngOnInit();
+  }
 }
