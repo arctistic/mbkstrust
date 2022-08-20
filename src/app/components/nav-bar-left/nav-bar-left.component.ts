@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar-left',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar-left.component.scss']
 })
 export class NavBarLeftComponent implements OnInit {
+
+  @Input() mbks_logo:any;
 
   constructor() { }
 

@@ -1,0 +1,39 @@
+<div class="spacer"></div>
+
+<div class="container">
+  <div class="left">
+    <div class="logo">
+      <img src="https://drive.google.com/uc?export=view&id=1SXWZs6abokhLLKAt0ZtPFBZzq_6W63bv" alt="">
+    </div>
+    <div class="title">
+      Mukh Bandh Kaam Suru
+      <span>(MBKS)</span>
+
+    </div>
+  </div>
+  <div class="right">
+    <span (click)="slide()" class="icon-bars-solid"></span>
+  </div>
+</div>
+
+
+<div class="nav-link" @slidein *ngIf="showMenu">
+  <div class="link" routerLink="/home">Home</div>
+  <div class="link" (click)="dropdown()">
+    Projects
+    <span class="icon-angle-down-solid" *ngIf="!showProjects"></span>
+    <span class="icon-angle-up-solid" *ngIf="showProjects"></span>
+  </div>
+  <div @dorpdown class="project-links-container" *ngIf="showProjects">
+    <div
+    class="projects-link"
+    *ngFor="let project of projects"
+    (click)="navitageToProject(project.project_id)">
+      {{project.project_name}}
+      <span *ngIf="project.project_short_form != ''">
+        ({{project.project_short_form}})
+      </span>
+    </div>
+  </div>
+  <div class="link" routerLink="/aboutus">About Us</div>
+</div>

@@ -1,24 +1,25 @@
 <div class="container">
   <div class="vertical-spacer"></div>
-  <div class="mbks-logo">
-    <img src="https://github.com/arctistic/wearembks/blob/master/final-logo.png?raw=true" alt="mbks-logo">
+  <div class="mbks-logo" data-aos="fade-right" data-aos-offset="0" data-aos-duration="1500" data-aos-once="false">
+    <img src="{{mbks_logo}}" alt="mbks-logo">
   </div>
-  <div class="info">
+  <div class="info" data-aos="fade-left" data-aos-offset="0" data-aos-duration="1500" data-aos-once="false">
     <div class="info-group">
       <div class="title">Our Email</div>
-      <div class="caption">mbkstrust@gmail.com</div>
+      <div class="caption">{{data.mbks_email}}</div>
     </div>
     <div class="info-group">
       <div class="title">Our Contact Number</div>
-      <div class="caption">+91 - 6294943062
-      <br>+91 - 8016506615</div>
+      <div class="caption">{{data.mbks_contact_1}}
+      <br>{{data.mbks_contact_2}}</div>
     </div>
     <div class="info-group">
       <div class="title">Our Office</div>
-      <div class="caption">108 Pradhan Cottage, <br>
-      Bloomfield, Dali, <br>
-      Darjeeling, West Bengal, <br>
-      India - 734101</div>
+      <div class="caption">
+        <span *ngFor="let line of data.mbks_office_address">
+          {{line}} <br>
+        </span>
+      </div>
     </div>
   </div>
   <div class="vertical-spacer"></div>

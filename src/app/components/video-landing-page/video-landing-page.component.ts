@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-video-landing-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoLandingPageComponent implements OnInit {
 
-  constructor() { }
+  @Input() videoId:any;
+
+  public safeUrl:any;
+
+  constructor(private domSanitizer:DomSanitizer) { }
 
   ngOnInit(): void {
+    this.getSafeUrl('https://www.youtube.com/embed/'+this.videoId);
+  }
+
+  getSafeUrl(url:any) {
+    this.safeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

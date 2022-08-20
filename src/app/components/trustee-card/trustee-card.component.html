@@ -1,34 +1,33 @@
 <div *ngIf="isPhotoLeft" class="container">
-  <div class="spacer">
-    <img src="https://arctistic.github.io/wearembks/member-images/trust/rahul.jpeg" alt="">
+  <div data-aos="fade-down" class="spacer">
+    <img src="{{photo}}" alt="">
   </div>
-  <div class="content">
+  <div data-aos="fade-left" class="content">
     <div class="name">
-      Rahul Amulya Pradhan
+      {{name}}
     </div>
     <div class="position">
-      President
+      {{post}}
     </div>
     <div class="caption">
-      Mukh Bandh Kaam Suru is a Public Charitable Trust registered under the Indian Trust Act 1960 in Darjeeling, India. We are dedicated towards bringing back the lost essence of Darjeeling Hills.
+      {{caption}}
     </div>
   </div>
 </div>
 
 <div *ngIf="!isPhotoLeft" class="container photo-right">
-  <div class="spacer">
-    <img src="https://arctistic.github.io/wearembks/member-images/trust/rahul.jpeg" alt="">
+  <div data-aos="fade-down" class="spacer">
+    <img src="{{photo}}" alt="">
   </div>
-  <div class="content">
+  <div data-aos="fade-right" class="content">
     <div class="name">
-      Rahul Amulya Pradhan
+      {{name}}
     </div>
     <div class="position">
-      President
+      {{post}}
     </div>
     <div class="caption">
-      Mukh Bandh Kaam Suru is a Public Charitable Trust registered under the Indian Trust Act 1960 in Darjeeling, India.
-      We are dedicated towards bringing back the lost essence of Darjeeling Hills.
+      {{caption}}
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { HomePageService } from 'src/app/services/home-page.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-right',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarRightComponent implements OnInit {
 
-  constructor() { }
+  @Input() projects:any
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+
+  }
+
+  navitageToProject(project_id:string){
+    this.router.navigate(['project', project_id]).then(page => { window.location.reload(); });
   }
 
 }

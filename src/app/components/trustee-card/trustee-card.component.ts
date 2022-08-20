@@ -8,11 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TrusteeCardComponent implements OnInit {
 
   @Input() isPhotoLeft:any;
+  @Input() photo:any;
+  @Input() name:any;
+  @Input() post:any;
+  @Input() caption:any;
+  @Input() facebook:any = null;
+  @Input() insagram:any = null;
+  @Input() linkedin:any = null;
+
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.isPhotoLeft);
   }
 
 }

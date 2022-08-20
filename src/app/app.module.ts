@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,10 @@ import { ProjectsPageComponent } from './components/projects-page/projects-page.
 import { AboutusPageComponent } from './components/aboutus-page/aboutus-page.component';
 import { TrusteeCardComponent } from './components/trustee-card/trustee-card.component';
 import { KaryasaCardComponent } from './components/karyasa-card/karyasa-card.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { MobileNavComponent } from './components/mobile-nav/mobile-nav.component';
+import { MobileTrusteeCardComponent } from './components/mobile-trustee-card/mobile-trustee-card.component';
+
 
 @NgModule({
   declarations: [
@@ -37,12 +43,17 @@ import { KaryasaCardComponent } from './components/karyasa-card/karyasa-card.com
     ProjectsPageComponent,
     AboutusPageComponent,
     TrusteeCardComponent,
-    KaryasaCardComponent
+    KaryasaCardComponent,
+    LoaderComponent,
+    MobileNavComponent,
+    MobileTrusteeCardComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

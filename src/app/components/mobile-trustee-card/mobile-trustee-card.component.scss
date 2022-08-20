@@ -1,0 +1,39 @@
+@import '../../../styles.scss';
+@import '../../../assets/style.scss';
+
+.container{
+  background-color: $font-dark-bg-color;
+  padding: 1.5em 1em;
+  width: 90%;
+  margin: auto;
+  margin-top: 1em;
+  .header{
+    display: flex;
+    img{
+      height: 5em;
+      width: 5em;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .name-post{
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      .name{
+        font-family: 'Jost', sans-serif;
+        font-size: 1.1em;
+        color: $font-primary;
+      }
+      .post{
+        font-family: 'Jost', sans-serif;
+        font-size: 0.9em;
+        color: $font-secondary;
+      }
+    }
+  }
+  .content{
+    font-family: 'Jost', sans-serif;
+    margin-top: 0.5em;
+  }
+}

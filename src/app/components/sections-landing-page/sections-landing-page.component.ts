@@ -10,6 +10,7 @@ export class SectionsLandingPageComponent implements OnInit {
   @Input() title:any;
   @Input() caption:any;
   @Input() photoFirst:any;
+  @Input() photo:any;
 
   constructor() { }
 

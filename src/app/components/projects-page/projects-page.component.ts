@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProjectsPageService } from 'src/app/services/projects-page.service';
 
 @Component({
   selector: 'app-projects-page',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsPageComponent implements OnInit {
 
-  constructor() { }
+  public project:any = null;
+
+  constructor(
+    private projectPageService:ProjectsPageService,
+    private routes: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.scroll(0, 0);
+    let curThis = this;
+    setTimeout(function(){
+      curThis.projectPageService.getProjects().subscribe(
+        projects => {
+          let currentProjectId = curThis.routes.snapshot.paramMap.get('id');
+          curThis.project = curThis.searchForProject(currentProjectId, projects);
+        }
+      )
+    }, 1000)
+  }
+
+  searchForProject(projectId:any, projects:any){
+    for (var i = 0; i < projects.length; i++) {
+      if (projects[i].project_id == projectId) {
+        return projects[i];
+      }
+    }
   }
 
 }

@@ -15,7 +15,7 @@
       font-size: 2.5em;
       font-weight: 500;
       letter-spacing: -2px;
-      padding-top: 1.5em;
+      padding-top: 1em;
       padding-right: 1em;
       line-height: 45px;
       padding-bottom: 0.8em;
@@ -44,7 +44,6 @@
         cursor: pointer;
       }
       .donate-btn:hover{
-
         transform: scale(1.1);
       }
       .socials-container{
@@ -78,5 +77,98 @@
   .verticle-spacer-right{
     background-color: $primary-color;
   }
+}
 
+// MEDIA QUERIES
+
+@media screen and (max-width: 1200px) {
+  #main-container{
+    grid-template-columns: 0.5fr 5fr 3fr 0.5fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #main-container{
+    display: flex;
+    flex-direction: column-reverse;
+    .verticle-spacer-left{
+      display: none;
+    }
+    .verticle-spacer-right{
+      display: none;
+    }
+    .content-container{
+      padding: 2em;
+      .title{
+        padding: 1rem;
+      }
+      .caption{
+        padding: 1rem;
+      }
+      .footer{
+        position: static;
+        padding: 1rem;
+        .socials-container{
+          span{
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.donate-container{
+  position: relative;
+  min-height: 15em;
+  background-position: center;
+  box-shadow: 0px 0px 120px 88px inset;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: color-burn;
+  .title{
+    font-family: 'Jost', sans-serif;
+    color: $font-dark-bg-color;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .caption{
+    font-family: 'Jost', sans-serif;
+    color: $font-dark-bg-color;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0.74);
+    padding: 0.5em 2em;
+  }
+  .close-btn{
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #main-container{
+    .content-container{
+      .footer{
+        flex-direction: column;
+        align-items: center;
+        .socials-container{
+          padding-top: 2em;
+        }
+      }
+    }
+  }
+  .donate-container{
+    box-shadow: 0px 40px 112px 64px inset;
+    .title{
+      font-size: 1.2em;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <div id="container">
   <div id="links-container">
     <div class="link-container">
-      <a class="title scale-on-hover" href="">Home</a>
+      <a class="title scale-on-hover" routerLink="/home">Home</a>
     </div>
     <div class="link-container">
       <span id="project-title" class="title">
@@ -11,22 +11,20 @@
         <div id="arrow-div-container">
           <div class="arrow-div"></div>
             <ul class="dropdown-container">
-              <a href="">
-                <li>
-                  MBKS Education For All Initiative (MEFAI)
+              <div *ngFor="let project of projects">
+                <li (click)="navitageToProject(project.project_id)">
+                  <span *ngIf="project.project_short_form != ''">
+                    {{project.project_short_form}} -
+                  </span>
+                  {{project.project_name}}
                 </li>
-              </a>
-              <a href="">
-                <li>
-                  Children's Health Initiative for Lifelong Development (CHILD)
-                </li>
-              </a>
+              </div>
             </ul>
         </div>
       </span>
     </div>
     <div class="link-container">
-      <a class="title scale-on-hover" href="">About Us</a>
+      <a class="title scale-on-hover" routerLink="/aboutus">About Us</a>
     </div>
   </div>
   <div class="verticle-spacer"></div>

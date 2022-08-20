@@ -6,6 +6,7 @@
   min-height: 100vh;
   background-color: $secondary-color;
   .header{
+    // height: 100vh;
     width: 45em;
     margin: auto;
     .title{
@@ -22,12 +23,26 @@
       color: $font-secondary;
       padding-bottom: 1em;
     }
+    .credentials-container{
+      padding: 2em 0em;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      .credential{
+        padding: 1em;
+        text-align: center;
+        font-family: 'Jost', sans-serif;
+        font-weight: 500;
+        font-size: 0.9em;
+        color: $font-secondary;
+      }
+    }
     hr{
       background-color: $primary-color;
       width: 30em;
       margin: auto;
       margin-top: 2em;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
     }
   }
   .trustees{
@@ -36,13 +51,23 @@
     margin-top: 1em;
     hr{
       background-color: $primary-color;
-      width: 30em;
+      width: 50%;
       margin: auto;
       margin-top: 2em;
       margin-bottom: 1em;
     }
   }
-  .karyasa{
+  .trustee-mobile{
+    display: none;
+    hr{
+      background-color: $primary-color;
+      width: 50vw;
+      margin: auto;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+  }
+  .members{
     width: 45em;
     margin: auto;
     margin-top: 1em;
@@ -57,5 +82,49 @@
       color: $font-primary;
       text-align: center;
       padding-top: 0.5em;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #main-container{
+    .header{
+      width: 100%;
+      padding: 3em;
+    }
+    .trustees{
+      display: none;
+    }
+    .trustee-mobile{
+      display: block;
+    }
+    .members{
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  #main-container{
+    .header{
+      padding: 2em;
+      .credentials-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .credential{
+          width: 15em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+   #main-container{
+    .header{
+      padding: 1em;
+    }
   }
 }

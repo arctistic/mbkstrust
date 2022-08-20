@@ -2,28 +2,40 @@
   <div class="verticle-spacer-left"></div>
   <div class="content-container">
     <div class="title">
-      Bringing back the lost <br> essence of Darjeeling Hills
+      {{title}}
     </div>
     <div class="caption">
-      Mukh Bandh Kaam Suru is a Public Charitable Trust registered under the Indian Trust Act 1960 in Darjeeling, India. For
-      the past 5 years we have been involved in Education, Children Healthcare, Youth Empowerment, Poverty Alleviation and
-      Cleanliness sectors.
+      {{caption}}
     </div>
     <div class="footer">
-      <div class="donate-btn">
+      <div (click)="toggleDonate()" class="donate-btn">
         <span>DONATE</span>
       </div>
       <div class="socials-container">
-        <a href="https://www.facebook.com/mukhbandhkaamsuru/"><span class="icon-facebook-f-brands"></span></a>
-        <a href="https://twitter.com/MBKSTrust"><span class="icon-twitter-brands"></span></a>
-        <a href="https://instagram.com/mukhbandhkaamsuru?igshid=YmMyMTA2M2Y="><span class="icon-instagram-brands"></span></a>
-        <a href="https://www.youtube.com/channel/UCGCllDMtiy7tWMkuZ4Gen1g"><span class="icon-youtube-brands"></span></a>
-        <a href=""><span class="icon-linkedin-in-brands"></span></a>
+        <a href="https://www.facebook.com/mukhbandhkaamsuru/" target="_blank"><span class="icon-facebook-f-brands"></span></a>
+        <a href="https://twitter.com/MBKSTrust" target="_blank"><span class="icon-twitter-brands"></span></a>
+        <a href="https://instagram.com/mukhbandhkaamsuru?igshid=YmMyMTA2M2Y=" target="_blank"><span class="icon-instagram-brands"></span></a>
+        <a href="https://www.youtube.com/channel/UCGCllDMtiy7tWMkuZ4Gen1g" target="_blank"><span class="icon-youtube-brands"></span></a>
+        <a href="https://www.linkedin.com/in/mukh-band-kaam-suru-trust-435406232/" target="_blank"><span class="icon-linkedin-in-brands"></span></a>
       </div>
     </div>
   </div>
   <div class="photo-container">
-    <img src="https://arctistic.github.io/wearembks/header-images/image2.jpg" alt="landing photo 1">
+    <img src="{{photo}}" alt="landing photo 1">
   </div>
   <div class="verticle-spacer-right"></div>
+</div>
+
+<div #target @drop *ngIf="showDonate" class="donate-container"
+  [ngStyle]="{'background-image': 'url('+donateBg+')'}">
+  <div class="title">
+    Help us help change lives
+  </div>
+  <div class="caption">
+    Mukh Bandh Kaam Suru Trust <br>
+    State Bank of India <br>
+    A/c No. 37715203916 <br>
+    IFSC Code: SBIN0000063 <br>
+  </div>
+  <span class="close-btn" (click)="closeDonate()">x</span>
 </div>

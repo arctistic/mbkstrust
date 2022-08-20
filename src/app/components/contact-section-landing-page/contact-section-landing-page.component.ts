@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact-section-landing-page',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactSectionLandingPageComponent implements OnInit {
 
+  @Input() data:any;
+  @Input() mbks_logo:any;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

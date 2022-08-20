@@ -9,3 +9,16 @@ nav{
   align-items: center;
   border: none;
 }
+app-mobile-nav{
+  display: none;
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 800px){
+  nav{
+    display: none;
+  }
+  app-mobile-nav{
+    display: block;
+  }
+}

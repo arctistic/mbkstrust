@@ -2,19 +2,44 @@
 @import '../../../assets/style.scss';
 
 .container{
-  width: 10em;
-  height: 12em;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  background-color: $font-dark-bg-color;
-  margin: 2em;
+  width: 9em;
+  height: 9em;
+  background-color: transparent;
+  margin: 1em 2em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
   img{
-    width: 10em;
-    height: 10em;
+    width: 9em;
+    height: 9em;
     border-radius: 50%;
+    object-fit: cover;
   }
   .name{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #d5d5d5;
+    height: 5em;
+    /* border: 1px solid white; */
+    width: 100%;
+    padding: 1em;
+    background-color: rgb(0 0 0 / 62%);
     text-align: center;
-    font-family: 'Jost', sans-serif;
+    font-family: "Jost", sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  }
+  img:hover + .name{
+    display: flex;
+    transition: all 1s ease-in-out;
+  }
+  .name:hover{
+    display: flex;
+    cursor: none;
   }
 }

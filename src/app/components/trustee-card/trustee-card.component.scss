@@ -10,11 +10,11 @@
   height: 20em;
   .spacer{
     background-color: $font-dark-bg-color;
-    height: 80%;
+    height: 15em;
     border-bottom-left-radius: 50%;
     img{
       width: 100%;
-      height: 125%;
+      height: 18em;
       object-fit: cover;
       border-bottom-left-radius: 50%;
       border-bottom-right-radius: 50%;
@@ -22,7 +22,7 @@
   }
   .content{
     background-color: $font-dark-bg-color;
-    height: 80%;
+    height: 15em;
     padding: 2em 3em 2em 3em;
     .name{
       font-family: 'Jost', sans-serif;
@@ -36,6 +36,7 @@
       color: $font-secondary;
     }
     .caption{
+      padding-top: 0.5em;
       font-family: 'Jost', sans-serif;
       font-weight: 400;
       color: $font-primary;
@@ -46,6 +47,8 @@
   grid-template-columns: 9fr 4.5fr;
   .spacer{
     order: 2;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 50%;
   }
   .content{
     order: 1;

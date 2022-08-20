@@ -29,3 +29,52 @@
     }
   }
 }
+
+
+//MEDIA QUERIES
+
+@media screen and (max-width: 800px) {
+  #container{
+    .left-sec, .right-sec{
+      .icon{
+        font-size: 2em;
+      }
+      .content{
+        .title{
+          font-size: 1.5em;
+        }
+        .caption{
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 6em;
+    .vertical-spacer{
+      display: none;
+    }
+    .left-sec, .right-sec{
+      padding: 0.5rem;
+      .icon{
+        font-size: 1.5em;
+      }
+      .content{
+        .title{
+          font-size: 1em;
+          text-align: center;
+        }
+        .caption{
+          font-size: 0.8em;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+

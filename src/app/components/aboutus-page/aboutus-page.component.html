@@ -9,24 +9,70 @@
       Healthcare, Youth Empowerment, Poverty Alleviation and Cleanliness sectors.
     </div>
     <hr>
+    <div class="sub-title">Credentials</div>
+    <div class="credentials-container">
+      <div class="credential">
+        Registered u/s 12A of Income Tax Act
+        1961 vide No. AAFTM6336EE20212
+      </div>
+      <div class="credential">
+        Registered under the Indian Trust Act,
+        1882 under Registration No: IV-0401-00024/2017
+        dated 18th May 2017 at Darjeeling, West Bengal
+      </div>
+      <div class="credential">
+        Registered u/s 80G of Income Tax Act
+        1961 vide No. AAFTM6336EF20210
+      </div>
+    </div>
+    <hr>
   </div>
 
   <div class="sub-title">Trustees</div>
   <div class="trustees">
-    <app-trustee-card [isPhotoLeft]="true"></app-trustee-card>
-    <app-trustee-card [isPhotoLeft]="false"></app-trustee-card>
-    <app-trustee-card [isPhotoLeft]="true"></app-trustee-card>
-    <app-trustee-card [isPhotoLeft]="false"></app-trustee-card>
+    <span *ngFor="let trustee of trustees; let odd = odd; let even=even">
+      <app-trustee-card
+        *ngIf="even"
+        [isPhotoLeft]="true"
+        [name]="trustee.name"
+        [photo]="trustee.photo"
+        [post]="trustee.post"
+        [caption]="trustee.caption"
+        [facebook]="trustee.facebook"
+        [insagram]="trustee.instagram"
+        [linkedin]="trustee.linkedin">
+      </app-trustee-card>
+      <app-trustee-card
+        [isPhotoLeft]="false"
+        *ngIf="odd"
+        [name]="trustee.name"
+        [photo]="trustee.photo"
+        [post]="trustee.post"
+        [caption]="trustee.caption"
+        [facebook]="trustee.facebook"
+        [insagram]="trustee.instagram"
+        [linkedin]="trustee.linkedin">
+      </app-trustee-card>
+    </span>
     <hr>
   </div>
 
-  <div class="sub-title">Karyasa</div>
-  <div class="karyasa">
-    <app-karyasa-card></app-karyasa-card>
-    <app-karyasa-card></app-karyasa-card>
-    <app-karyasa-card></app-karyasa-card>
-    <app-karyasa-card></app-karyasa-card>
-    <app-karyasa-card></app-karyasa-card>
+  <div class="trustee-mobile">
+    <app-mobile-trustee-card
+      *ngFor="let trustee of trustees"
+      [trustee]="trustee"
+    ></app-mobile-trustee-card>
+    <hr>
+  </div>
+
+  <div class="sub-title">Members</div>
+  <div class="members">
+    <app-karyasa-card *ngFor="let member of members"
+    [firstName]="member.first_name"
+    [lastName]="member.last_name"
+    [photo]="member.photo_link"
+    >
+  </app-karyasa-card>
   </div>
 </div>
 <app-footer></app-footer>
