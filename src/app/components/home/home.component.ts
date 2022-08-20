@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { HomePageService } from 'src/app/services/home-page.service';
 
 @Component({
@@ -10,7 +11,11 @@ export class HomeComponent implements OnInit {
 
   public info:any = null;
 
-  constructor(private homeService:HomePageService) { }
+  constructor(
+    private homeService:HomePageService,
+    private titleService: Title) {
+      this.titleService.setTitle('Mukh Bandh Kaam Suru')
+    }
 
   ngOnInit(): void {
     window.scroll(0, 0);

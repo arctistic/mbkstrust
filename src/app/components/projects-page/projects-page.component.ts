@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectsPageService } from 'src/app/services/projects-page.service';
 
@@ -14,7 +15,8 @@ export class ProjectsPageComponent implements OnInit {
 
   constructor(
     private projectPageService:ProjectsPageService,
-    private routes: ActivatedRoute) { }
+    private routes: ActivatedRoute,
+    private titleService:Title) { }
 
   ngOnInit(): void {
     window.scroll(0, 0);
@@ -25,6 +27,7 @@ export class ProjectsPageComponent implements OnInit {
           let currentProjectId = curThis.routes.snapshot.paramMap.get('id');
           curThis.project = curThis.searchForProject(currentProjectId, projects);
           curThis.showLoadingPage = false;
+          curThis.titleService.setTitle(curThis.project.project_name);
         }
       )
     }, 1000)

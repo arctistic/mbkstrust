@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AboutusPageService } from 'src/app/services/aboutus-page.service';
 
 @Component({
@@ -11,7 +12,11 @@ export class AboutusPageComponent implements OnInit {
   public trustees:any;
   public members:any;
 
-  constructor(private aboutUsService:AboutusPageService) { }
+  constructor(
+    private aboutUsService:AboutusPageService,
+    private titleService:Title) {
+      this.titleService.setTitle('About Us')
+    }
 
   ngOnInit(): void {
     window.scroll(0, 0);
