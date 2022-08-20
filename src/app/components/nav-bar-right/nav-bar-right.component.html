@@ -12,7 +12,7 @@
           <div class="arrow-div"></div>
             <ul class="dropdown-container">
               <div *ngFor="let project of projects">
-                <li (click)="navitageToProject(project.project_id)">
+                <li routerLink="project/{{project.project_id}}">
                   <span *ngIf="project.project_short_form != ''">
                     {{project.project_short_form}} -
                   </span>
