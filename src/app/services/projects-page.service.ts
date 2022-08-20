@@ -10,7 +10,7 @@ export class ProjectsPageService {
   constructor(private http:HttpClient) { }
 
   getProjects():Observable<any>{
-    // return this.http.get<any>('https://arctistic.github.io/wearembks/mbks-projects.json');
-    return this.http.get<any>('../assets/json/JSON-projects.json');
+    return this.http.get<any>('https://arctistic.github.io/wearembks/JSON-projects.json');
+    // return this.http.get<any>('../assets/json/JSON-projects.json');
   }
 }

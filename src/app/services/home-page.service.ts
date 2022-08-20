@@ -12,12 +12,12 @@ export class HomePageService {
   }
 
   getProjectNames(): Observable<any>{
-    // return this.http.get<any>('https://arctistic.github.io/wearembks/mbks-project-names.json');
-    return this.http.get<any>('../assets/json/JSON-navbar.json');
+    return this.http.get<any>('https://arctistic.github.io/wearembks/JSON-navbar.json');
+    // return this.http.get<any>('../assets/json/JSON-navbar.json');
   }
 
   getSectionInfo(): Observable<any>{
-    // return this.http.get<any>('https://arctistic.github.io/wearembks/mbks-home-info.json');
-    return this.http.get<any>('../assets/json/JSON-home.json');
+    return this.http.get<any>('https://arctistic.github.io/wearembks/JSON-home.json');
+    // return this.http.get<any>('../assets/json/JSON-home.json');
   }
 }
