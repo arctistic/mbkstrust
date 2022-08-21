@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, Routes } from '@angular/router';
 
 
 @Component({
@@ -32,10 +32,27 @@ export class MobileNavComponent implements OnInit {
 
   @Input() projects:any;
 
+  @Output() projectIdEmitterFromMobileNav: EventEmitter<any> = new EventEmitter();
+
   public showMenu:boolean = false;
   public showProjects:boolean = false;
+  navigationSubscription: any;
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    private routes:ActivatedRoute) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationEnd) {
+        this.initialiseInvites();
+      }
+    });
+  }
+
+  initialiseInvites() {
+    this.projectIdEmitterFromMobileNav.emit(this.routes.snapshot.paramMap.get('id'));
+    this.showMenu = false;
+  }
 
   ngOnInit(): void {
   }
@@ -46,9 +63,4 @@ export class MobileNavComponent implements OnInit {
   dropdown(){
     this.showProjects = !this.showProjects;
   }
-
-  navitageToProject(project_id: string) {
-    this.router.navigate(['project', project_id]).then(page => { window.location.reload(); });
-  }
-
 }

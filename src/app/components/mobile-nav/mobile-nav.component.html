@@ -28,7 +28,7 @@
     <div
     class="projects-link"
     *ngFor="let project of projects"
-    (click)="navitageToProject(project.project_id)">
+    routerLink="/project/{{project.project_id}}">
       {{project.project_name}}
       <span *ngIf="project.project_short_form != ''">
         ({{project.project_short_form}})
