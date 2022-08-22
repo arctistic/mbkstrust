@@ -31,10 +31,14 @@
   <div class="title">
     Help us help change lives
   </div>
-  <div class="caption">
-    <span *ngFor="let line of bankDetails">
-      {{line}} <br>
-    </span>
+  <div class="content-container">
+    <div class="caption">
+      <span *ngFor="let line of bankDetails">
+        {{line}} <br>
+      </span>
+    </div>
+    <img class="qr-code" src="{{qrcode}}" alt="">
   </div>
+
   <span class="close-btn" (click)="closeDonate()">x</span>
 </div>

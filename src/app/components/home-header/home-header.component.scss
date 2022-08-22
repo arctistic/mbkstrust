@@ -79,6 +79,56 @@
   }
 }
 
+.donate-container{
+  position: relative;
+  min-height: 15em;
+  background-position: center;
+  box-shadow: 0px 0px 120px 88px inset;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: color-burn;
+  .title{
+    font-family: 'Jost', sans-serif;
+    color: $font-dark-bg-color;
+    font-size: 2em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .content-container{
+    display: flex;
+    margin: 1em;
+    .caption{
+      font-family: 'Jost', sans-serif;
+      color: $font-dark-bg-color;
+      font-size: 1em;
+      background-color: rgba(0, 0, 0, 0.74);
+      padding: 0.5em 2em;
+      margin: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .qr-code{
+      width: 10em;
+      height: 10em;
+      margin: 1em;
+    }
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+}
+
 // MEDIA QUERIES
 
 @media screen and (max-width: 1200px) {
@@ -118,41 +168,6 @@
   }
 }
 
-.donate-container{
-  position: relative;
-  min-height: 15em;
-  background-position: center;
-  box-shadow: 0px 0px 120px 88px inset;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-blend-mode: color-burn;
-  .title{
-    font-family: 'Jost', sans-serif;
-    color: $font-dark-bg-color;
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-  .caption{
-    font-family: 'Jost', sans-serif;
-    color: $font-dark-bg-color;
-    font-size: 1em;
-    background-color: rgba(0, 0, 0, 0.74);
-    padding: 0.5em 2em;
-  }
-  .close-btn{
-    position: absolute;
-    top: 0.5em;
-    right: 1em;
-    color: white;
-    font-family: 'Jost', sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-}
-
 @media screen and (max-width: 400px) {
   #main-container{
     .content-container{
@@ -169,6 +184,10 @@
     box-shadow: 0px 40px 112px 64px inset;
     .title{
       font-size: 1.2em;
+    }
+    .content-container{
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

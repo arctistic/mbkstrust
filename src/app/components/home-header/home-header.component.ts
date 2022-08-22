@@ -24,6 +24,7 @@ export class HomeHeaderComponent implements OnInit {
   @Input() photo:any;
   @Input() donateBg:any;
   @Input() bankDetails:any
+  @Input() qrcode:any;
 
   public showDonate:boolean = false;
 
